@@ -1,0 +1,99 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "EasyCourses API",
+    "version": "1.0",
+    "contact": {
+      "name": "Peranut W.",
+      "url": "https://iampeach.me"
+    },
+    "description": "EasyCourses API for System Analysis & Design Project @ CS KU"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:5000"
+    }
+  ],
+  "paths": {
+    "/students": {
+      "get": {
+        "summary": "Get All Students",
+        "tags": [
+          "Students"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "national_id": {
+                        "type": "string"
+                      },
+                      "firstname": {
+                        "type": "string"
+                      },
+                      "lastname": {
+                        "type": "string"
+                      },
+                      "nickname": {
+                        "type": "string"
+                      },
+                      "education_level": {
+                        "type": "string"
+                      },
+                      "school": {
+                        "type": "string"
+                      },
+                      "tel_no": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                },
+                "examples": {
+                  "Example 1": {
+                    "value": {
+                      "id": 1,
+                      "national_id": "1100100234567",
+                      "firstname": "พีรณัฐ",
+                      "lastname": "วัฒนากุลศิริ",
+                      "nickname": "พีช",
+                      "education_level": "M4",
+                      "school": "โรงเรียนเตรียมอุดมศึกษาน้อมเกล้า",
+                      "tel_no": "0923456789"
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "operationId": "students",
+        "description": "ดึงข้อมูลนักเรียนทั้งหมด เป็น List ของ Student ข้อมูลมีตามตัวอย่าง"
+      }
+    },
+    "/courses": {
+      "get": {
+        "summary": "Get All Courses",
+        "tags": [
+          "Courses"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        },
+        "description": "ดึงข้อมูลรายวิชา",
+        "operationId": "courses"
+      }
+    }
+  }
+}
