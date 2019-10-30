@@ -7,7 +7,7 @@
       "name": "Peranut W.",
       "url": "https://iampeach.me"
     },
-    "description": "EasyCourses API for System Analysis & Design Project @ CS KU"
+    "description": "EasyCourses API Documentation for System Analysis & Design Project @ CS KU"
   },
   "servers": [
     {
@@ -76,8 +76,94 @@
             }
           }
         },
-        "operationId": "students",
+        "operationId": "get_students",
         "description": "ดึงข้อมูลนักเรียนทั้งหมด เป็น List ของ Student ข้อมูลมีตามตัวอย่าง"
+      },
+      "post": {
+        "summary": "Create Student",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        },
+        "description": "เพิ่มข้อมูลนักเรียนใหม่",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "national_id": {
+                    "type": "string"
+                  },
+                  "firstname": {
+                    "type": "string"
+                  },
+                  "lastname": {
+                    "type": "string"
+                  },
+                  "nickname": {
+                    "type": "string"
+                  },
+                  "gender": {
+                    "type": "string",
+                    "enum": [
+                      "MALE",
+                      "FEMALE",
+                      "OTHER"
+                    ]
+                  },
+                  "date_of_birth": {
+                    "type": "string"
+                  },
+                  "tel_no": {
+                    "type": "string"
+                  },
+                  "education_level": {
+                    "type": "string",
+                    "enum": [
+                      "P1",
+                      "P2",
+                      "P3",
+                      "P4",
+                      "P5",
+                      "P6",
+                      "M1",
+                      "M2",
+                      "M3",
+                      "M4",
+                      "M5",
+                      "M6",
+                      "NA"
+                    ]
+                  },
+                  "school": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "national_id",
+                  "firstname",
+                  "lastname",
+                  "nickname",
+                  "gender",
+                  "date_of_birth",
+                  "tel_no",
+                  "education_level",
+                  "school"
+                ]
+              }
+            }
+          },
+          "description": ""
+        },
+        "operationId": "post_students",
+        "tags": [
+          "Students"
+        ]
       }
     },
     "/courses": {
@@ -88,7 +174,25 @@
         ],
         "responses": {
           "200": {
-            "description": "OK"
+            "description": "OK",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "type": "object",
+                    "properties": {
+                      "id": {
+                        "type": "string"
+                      },
+                      "": {
+                        "type": "string"
+                      }
+                    }
+                  }
+                }
+              }
+            }
           }
         },
         "description": "ดึงข้อมูลรายวิชา",
