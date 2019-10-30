@@ -37,10 +37,10 @@
                       "national_id": {
                         "type": "string"
                       },
-                      "firstname": {
+                      "first_name": {
                         "type": "string"
                       },
-                      "lastname": {
+                      "last_name": {
                         "type": "string"
                       },
                       "nickname": {
@@ -52,7 +52,7 @@
                       "school": {
                         "type": "string"
                       },
-                      "tel_no": {
+                      "phone_no": {
                         "type": "string"
                       }
                     }
@@ -99,10 +99,10 @@
                   "national_id": {
                     "type": "string"
                   },
-                  "firstname": {
+                  "first_name": {
                     "type": "string"
                   },
-                  "lastname": {
+                  "last_name": {
                     "type": "string"
                   },
                   "nickname": {
@@ -116,10 +116,10 @@
                       "OTHER"
                     ]
                   },
-                  "date_of_birth": {
+                  "birth_date": {
                     "type": "string"
                   },
-                  "tel_no": {
+                  "phone_no": {
                     "type": "string"
                   },
                   "education_level": {
@@ -146,12 +146,12 @@
                 },
                 "required": [
                   "national_id",
-                  "firstname",
-                  "lastname",
+                  "first_name",
+                  "last_name",
                   "nickname",
                   "gender",
-                  "date_of_birth",
-                  "tel_no",
+                  "birth_date",
+                  "phone_no",
                   "education_level",
                   "school_id"
                 ]
